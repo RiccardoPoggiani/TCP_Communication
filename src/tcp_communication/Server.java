@@ -1,11 +1,10 @@
 package tcp_communication;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,14 +20,14 @@ public class Server {
     
     
     public Server(int porta){
-        this.porta=porta;
+        this.porta = porta;
         try{
             serverSocket = new ServerSocket(porta);
-            System.out.println("1) SERVER IN ASCOLTO");
+            System.out.println("1) SERVER IN ASCOLTO SULLA PORTA " + porta);
         } catch(BindException ex) {
-            System.out.println("PORTA OCCUPATA");
+            System.out.println("ERRORE: SERVER NON IN ASCOLTO PER PORTA OCCUPATA");
         } catch(IllegalArgumentException ex) {
-            System.out.println("NUMERO DI PORTA NON VALIDO");
+            System.out.println("ERRORE: SERVER NON IN ASCOLTO PER NUMERO DI PORTA NON VALIDO");
         }
         catch(IOException ex){
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
@@ -51,23 +50,33 @@ public class Server {
     
     public void leggi() {
         InputStream i;
+        BufferedReader br;
+        String str1;
         try {
             i = clientSocket.getInputStream();
-            i.read();
+            br = new BufferedReader(new InputStreamReader(i));
+            str1 = br.readLine();
+            System.out.println("IL MESSAGGIO RICEVUTO E': " + str1);
         } catch (IOException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("MESSAGGIO NON RICEVUTO");
         }
     }
         
     
     public void scrivi() {
         OutputStream o;
+        BufferedWriter bw;
+        String str2;
         try {
             o = clientSocket.getOutputStream();
-            o.write(1);
-            o.flush();
+            bw = new BufferedWriter(new OutputStreamWriter(o));
+            str2 = "CIAO CLIENT, TI ASPETTAVO!";
+            bw.write(str2);
+            bw.flush();
         } catch (IOException ex) {
-            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("MESSAGGIO NON SPEDITO");
         }
     }
         
