@@ -1,8 +1,6 @@
 package tcp_communication;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.ConnectException;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -19,8 +17,9 @@ public class Client {
     String colore;
     Socket socket;
     
-    public Client(String nome){
+    public Client(String nome, String colore){
         this.nome = nome;
+        this.colore = colore;
     }
             
     public void connetti(String nomeServer, int porta){
@@ -28,29 +27,38 @@ public class Client {
             socket = new Socket(nomeServer, porta);
             System.out.println("1) CONNESSIONE AVVENUTA CON IL SERVER");
         } catch(ConnectException ex){
-            System.out.println("ERRORE CEONNESSIONE SERVER");
+            System.out.println("ERRORE CONNESSIONE SERVER");
         } catch(UnknownHostException ex){
             System.out.println("ERRORE RISOLUZIONE DEL NOME");
         }catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("ERRORE NELLA CONNESSIONE");
         }
-  }
+    }
+
     public void leggi() {
-       InputStream i;
+        InputStream i;
+        BufferedReader br;
+        String str1;
         try {
             i = socket.getInputStream();
-            i.read();
+            br = new BufferedReader(new InputStreamReader(i));
+            str1 = br.readLine();
+            System.out.println("IL MESSAGGIO RICEVUTO E': " + str1);
         } catch (IOException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     public void scrivi() {
-         try {
-            OutputStream o = socket.getOutputStream();
-            o.write(1);
-            o.flush();
+        OutputStream o;
+        BufferedWriter bw;
+        String str2 = "Ciao Server!";
+        try {
+            o = socket.getOutputStream();
+            bw = new BufferedWriter(new OutputStreamWriter(o));
+            bw.write(str2 + "\n");
+            bw.flush();
         } catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }

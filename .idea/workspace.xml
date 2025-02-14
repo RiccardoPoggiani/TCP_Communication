@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="661b0421-47ca-4c88-a2cb-61e56d474322" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tcp_communication/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcp_communication/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tcp_communication/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcp_communication/MainClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tcp_communication/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcp_communication/MainServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tcp_communication/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcp_communication/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,9 +19,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2syvEPGloHqMhEoTHGTgatVc5M0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,6 +29,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Client.executor": "Run",
+    "Application.MainClient.executor": "Run",
+    "Application.MainServer.executor": "Run",
+    "Application.Server.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -33,6 +40,26 @@
     "last_opened_file_path": "C:/Users/studente/Desktop/TCP_Communication"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.Server">
+    <configuration name="Client" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="tcp_communication.MainClient" />
+      <module name="TCP_Communication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="tcp_communication.MainServer" />
+      <module name="TCP_Communication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client" />
+    </list>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

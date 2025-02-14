@@ -6,10 +6,10 @@ package tcp_communication;
  */
 public class MainClient {
     public static void main(String[] args) {
-        Client c = new Client("localhost");
-        c.connetti("localhost", 50005);
-       // c.leggi();
-        //c.scrivi();
+        Client c = new Client("Riccardo", "verde");
+        c.connetti("localhost", 60000);
+        c.scrivi();
+        c.leggi();
         c.chiudi();
     }
     

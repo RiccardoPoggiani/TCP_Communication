@@ -71,8 +71,8 @@ public class Server {
         try {
             o = clientSocket.getOutputStream();
             bw = new BufferedWriter(new OutputStreamWriter(o));
-            str2 = "CIAO CLIENT, TI ASPETTAVO!";
-            bw.write(str2);
+            str2 = "Ciao Client!";
+            bw.write(str2 + "\n");
             bw.flush();
         } catch (IOException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
