@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.ConnectException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,27 +40,24 @@ public class Client {
     }
 
     public void leggi() {
-        InputStream i;
-        BufferedReader br;
-        String str1;
+        String messaggioServer;
         try {
-            i = socket.getInputStream();
-            br = new BufferedReader(new InputStreamReader(i));
-            str1 = br.readLine();
-            System.out.println(GREEN + "3) IL MESSAGGIO RICEVUTO E': " + str1 + RESET);
+            BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            messaggioServer = br.readLine();
+            System.out.println(GREEN + "3) IL MESSAGGIO RICEVUTO E': " + messaggioServer + RESET);
         } catch (IOException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     public void scrivi() {
-        OutputStream o;
-        BufferedWriter bw;
-        String str2 = "Ciao Server!";
+        System.out.println(GREEN + "INSERISCI IL MESSAGGIO DA INVIARE AL CLIENT ('end' PER SPEGNERE SERVER): " + RESET);
+        Scanner in = new Scanner(System.in);
+        String messaggioClient = in.nextLine();
+
         try {
-            o = socket.getOutputStream();
-            bw = new BufferedWriter(new OutputStreamWriter(o));
-            bw.write(GREEN + str2 + "\n" + RESET);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            bw.write(GREEN + messaggioClient + "\n" + RESET);
             bw.flush();
         } catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
