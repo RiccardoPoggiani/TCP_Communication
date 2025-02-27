@@ -7,8 +7,6 @@
     <list default="true" id="661b0421-47ca-4c88-a2cb-61e56d474322" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tcp_communication/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcp_communication/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcp_communication/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcp_communication/MainClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcp_communication/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcp_communication/MainServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tcp_communication/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcp_communication/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,20 +25,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Client.executor": "Run",
-    "Application.MainClient.executor": "Run",
-    "Application.MainServer.executor": "Run",
-    "Application.Server.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/studente/Desktop/TCP_Communication"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/studente/Desktop/TCP_Communication&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Server">
+}</component>
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="tcp_communication.MainClient" />
       <module name="TCP_Communication" />
@@ -70,5 +68,26 @@
       <updated>1739440516619</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="0359e722-ad18-4646-b9e9-ad02cbb27eb8" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="0359e722-ad18-4646-b9e9-ad02cbb27eb8">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
